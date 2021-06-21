@@ -1,0 +1,53 @@
+def InsertionSort(array):
+    
+    for i in range(1,len(array)):
+        key = array[i]
+        j = i-1
+        
+        while (j >= 0 and key < array[j]):
+            array[j+1] = array[j]
+            j -= 1
+        array[j+1] = key
+    
+    return array
+
+def BinarySearch(array, item, low, high):
+    
+    print(array[low:high])
+    
+    if low == high:
+        if arr[low] > item:
+            return low
+        else:
+            return low + 1
+    
+    if low > high:
+        return low
+    
+    mid = (high + low) // 2
+    
+    if (item > array[mid]):
+        return BinarySearch(array, item, mid+1, high)
+    elif (item < array[mid]):
+        return BinarySearch(array, item, low, mid-1)
+    else:
+        return mid
+    
+
+def BinaryInsertionSort(array):
+    
+    return array
+
+# script
+inputArr = [1,5,3,7,5,9,7,11,2,8,4,6]
+print(f"before: {inputArr}")
+
+#outputArr = InsertionSort(inputArr)
+#print(f"after InsertionSort: {outputArr}")
+
+index = BinarySearch(inputArr, 11, 0, len(inputArr))
+print(inputArr[index])
+
+
+#outputArr = BinaryInsertionSort(inputArr)
+#print(f"after BinaryInsertionSort: {outputArr}")
